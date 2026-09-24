@@ -1,13 +1,13 @@
 {
   "name": "game-console-menu",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "main": "electron/main.js",
   "scripts": {
     "dev": "./node_modules/.bin/vite",
     "build": "./node_modules/.bin/vite build",
     "electron": "./node_modules/.bin/electron .",
     "start": "./node_modules/.bin/concurrently \"npm run dev\" \"npm run electron\"",
-    "package:local": "vite build && electron-builder --linux --x64", 
+    "package:local": "vite build && electron-builder --linux --x64",
     "package:pi": "vite build && electron-builder --linux --armv7l"
   },
   "devDependencies": {
@@ -29,11 +29,23 @@
       "dist/**/*",
       "electron/**/*"
     ],
+    "extraResources": [
+      {
+        "from": "public/assets/sounds",
+        "to": "sounds"
+      },
+      {
+        "from": "public/assets/pictures",
+        "to": "pictures"
+      }
+    ],
     "linux": {
       "target": [
         {
           "target": "AppImage",
-          "arch": ["armv7l"]
+          "arch": [
+            "armv7l"
+          ]
         }
       ]
     }

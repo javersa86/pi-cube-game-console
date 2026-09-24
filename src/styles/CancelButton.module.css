@@ -11,3 +11,23 @@
     border-radius: 24px;
     cursor: pointer;
 }
+
+.container:hover {
+    background-color: darkred;
+    transform: scale(1.05);      /* subtle grow */
+}
+
+.container:active {
+    background-color: red;
+    transform: scale(0.95);      /* slight press down feel */
+}
+
+.pressed {
+    background-color: darkred;
+    transform: scale(0.95);      /* slight press down feel */
+}
+
+.pressedInput {
+    background-color: red;
+    transform: scale(0.95);      /* slight press down feel */
+}

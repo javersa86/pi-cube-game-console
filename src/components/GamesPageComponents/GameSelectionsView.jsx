@@ -1,7 +1,7 @@
 import { useState } from "react"
 import GameSelectionsViewStyle from "/src/styles/GameSelectionsView.module.css"
-import UpButton from "./UpButton"
-import DownButton from "./DownButton"
+import UpButton from "../Buttons/UpButton"
+import DownButton from "../Buttons/DownButton"
 
 function GameSelectionsView(gameTitles) {
     return (

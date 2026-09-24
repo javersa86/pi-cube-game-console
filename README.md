@@ -61,8 +61,8 @@ Connect the brightness slider on the Options page to the actual system display b
 ### 2. 💾 External Device Manager
 A new page for managing games and files stored on a USB drive or external storage device. Will allow users to browse, add, and remove games from the console.
 
-### 3. 🎮 Game Launcher Window
-A separate window for launching and running games. Games will open in their own window while the menu remains in the background, allowing the user to return to the menu after a game session ends.
+### 3. 🎮 App/Game Launcher Window
+A separate window for launching and running content. Pygame games are the initial supported format, launched via `python <game>.py`; the launcher's scope is expanding beyond games to general Python applications sharing the same launch model. Content opens in its own window while the menu remains in the background, allowing the user to return to the menu after a session ends.
 
 ### 4. 🔊 Volume Integration
 Connect the volume slider on the Options page to the system audio level via ALSA. Will use Electron's Node.js backend to call `amixer` commands on the Pi.
@@ -185,7 +185,7 @@ The following flags are required when running on the Yocto image due to missing 
 
 This app is deployed as part of a custom Yocto Linux image for the Raspberry Pi 4. The Yocto layer that packages and auto-starts this app is maintained separately:
 
-👉 **[meta-game-console](https://github.com/Brickhouse4U/meta-game-console)**
+👉 **[meta-game-console](https://github.com/javersa86/meta-game-console)**
 
 The Yocto build extracts the AppImage contents and installs them to `/opt/game-console-menu/` on the target image. A systemd service starts X.Org and launches the app automatically on boot.
 
@@ -198,7 +198,7 @@ The Yocto build extracts the AppImage contents and installs them to `/opt/game-c
 ✅ Phase 1 — Basic page navigation (Games + Options)
 ⬜ Phase 2 — Brightness adjustment (Options → system)
 ⬜ Phase 3 — External device manager page
-⬜ Phase 4 — Game launcher window
+⬜ Phase 4 — App/game launcher window (pygame games as initial format, expanding to general Python apps)
 ⬜ Phase 5 — Volume integration (Options → ALSA)
 ⬜ Phase 6 — Gamepad / controller support
 ```
@@ -207,3 +207,11 @@ The Yocto build extracts the AppImage contents and installs them to `/opt/game-c
 
 ## Notes
 This project was developed for personal/educational purposes. The Yocto build configuration and initial project structure were developed with the assistance of Claude (Anthropic) and validated through iterative testing on physical hardware.
+
+---
+
+## Repository History
+The repository moved on 2026-09-23 from the `Brickhouse4U` GitHub account to [`javersa86`](https://github.com/javersa86), consolidating all portfolio projects under one account. History, issues, and pull requests came with it, and old `github.com/Brickhouse4U/...` links redirect here automatically. To update an existing clone:
+```bash
+git remote set-url origin https://github.com/javersa86/pi-cube-game-console.git
+```
